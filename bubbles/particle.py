@@ -68,7 +68,7 @@ class Particle:
         self._rotation_change = (self.rotation_end - self.rotation) / self.lifetime
         initial_colour = self.colour
         self.colour = [i for i in initial_colour]
-        self._colour_change = [(self.colour_end[i] - initial_colour[i]) // self.lifetime
+        self._colour_change = [(self.colour_end[i] - initial_colour[i]) / self.lifetime
                                for i in range(len(initial_colour))]
 
     @staticmethod

@@ -75,10 +75,6 @@ Particles are the small, individual parts that make up a collective effect. `Emi
 
 Any parameters that have the suffix `_end` are, well, the end values of the parameter. For example if we have:
 
-bubbles supports drawing of vector shapes, or using a texture instead. The default shape is square. The drawing of these shapes is renderer dependent however. All renderers should really have a square drawer as it is the default for particles. Refer to the `ÈffectRenderer` section to see renderers and whats shapes they can draw.
-
-bubbles provides some sample textures which can be accessed using `Particle.sample_texture_map[texture_name]`. Have a look in `bubbles/textures` to see them.
-
 ```python
 {
     "scale": 0,
@@ -88,7 +84,11 @@ bubbles provides some sample textures which can be accessed using `Particle.samp
 
 The particle will start its life will a scale of 0, and linearly grow to a scale of 1 by the end of its lifetime.
 
-At current, only linear transitions between start and end values are possible.
+Presently, only linear transitions between start and end values are possible.
+
+bubbles supports drawing of vector shapes, or using a texture instead. The default shape is square. The drawing of these shapes is renderer dependent however. All renderers should really have a square drawer as it is the default for particles. Refer to the `ÈffectRenderer` section to see renderers and whats shapes they can draw.
+
+bubbles provides some sample textures which can be accessed using `Particle.sample_texture_map[texture_name]`. Have a look in `bubbles/textures` to see them.
 
 ### Emitter
 

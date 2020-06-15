@@ -13,7 +13,7 @@ class PygameEffectRenderer(EffectRenderer):
             "circle": self._render_circle
         }
 
-    def _render_particle(self, particle, surface, pos):
+    def _render_particle(self, particle, surface, position):
         if particle.shape in self._shapes.keys():
             texture = self._shapes[particle.shape](particle)
         else:
@@ -23,7 +23,7 @@ class PygameEffectRenderer(EffectRenderer):
         else:
             texture.set_alpha(round(255 * particle.opacity))
         texture = pygame.transform.rotate(texture, particle.rotation)
-        surface.blit(texture, (pos[0], pos[1]))
+        surface.blit(texture, (position[0], position[1]))
 
     def _render_texture(self, particle):
         texture = self._textures[particle.shape].copy()

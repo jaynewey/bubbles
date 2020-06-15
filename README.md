@@ -2,11 +2,31 @@
 
 A lightweight, flexible particle system written in Python.
 
+## Examples
+
+Here are some examples of simple particle effect with bubbles.
+
+...
+
+You can find the .json for these in the examples folder.
+
 ## Usage
 
-The easiest way to create particle effects with bubbles, is by specifying all your settings in a python `dict` and passing it into `ParticleEffect.load_from_dict()`. More details on how to structure this and parameters you can specify are below. This is useful as you can store your effect settings in .json files, load them into python as a dict, and straight into bubbles.
+The easiest way to create particle effects with bubbles, is by specifying all your settings in a python `dict` and passing it into `ParticleEffect.load_from_dict()`. More details on how to structure this and parameters you can specify are below. This is useful as you can store your effect settings in .json files, load them into python as a dict:
+ 
+ ```python
+import json
+with open("filename.json") as f:
+    d = json.load(f)
+```
+ 
+...and straight into bubbles:
+ 
+```python
+particle_effect = ParticleEffect.load_from_dict(d)
+```
 
-You can them render a `ParticleEffect` using your own or one of the builtin `EffectRenderer` classes.
+You can then render a `ParticleEffect` using your own or one of the builtin `EffectRenderer` classes.
 
 It is useful to note that when using `load_from_dict()` any parameters not specified in your dictionary will be remain as their default, meaning you need only specify parameters you want to change.
 
@@ -155,4 +175,4 @@ The `base_size` constructor parameter is used for vector shape drawing. It deter
 
 If you want to use partial transparency with a texture you can do so by passing the optional parameter `per_pixel_alpha=True` in the constructor and using a pygame surface with the `pygame.SRCALPHA` flag. Note that this will make rendering somewhat slower though.
 
-Something to note is any black (RGB=(0, 0, 0)) particles is transparent by default. If you want to use a texture that has black in it, change the colorkey using the optional parameter `colorkey` when constructing a `PygameEffectRenderer`. The built-in shapes and textures rely on the colorkey being black so only do this per your specific requirements.
+Something to note is any black (RGB=(0, 0, 0)) particles are transparent by default. If you want to use a texture that has black in it, change the colorkey using the optional parameter `colorkey` when constructing a `PygameEffectRenderer`. The built-in shapes and textures rely on the colorkey being black so only do this per your specific requirements.

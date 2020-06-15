@@ -4,9 +4,11 @@ A lightweight, flexible particle system written in Python.
 
 ## Examples
 
-Here are some examples of simple particle effect with bubbles.
+Here are some examples of simple particle effects with bubbles.
 
-...
+![Alt Text](https://media.giphy.com/media/H5wjqqavoLRy5JiEXh/giphy.gif)
+![Alt Text](https://media.giphy.com/media/fxYWAMX1UC9RSmxdeO/giphy.gif)
+![Alt Text](https://media.giphy.com/media/L0evOjJujJuDLSzuTa/giphy.gif)
 
 You can find the .json for these in the examples folder.
 

@@ -1,0 +1,31 @@
+{
+	"loops": -1,
+	"emitters": [
+		{
+			"width": 8,
+			"height": 8,
+			"frames": 2,
+			"spawn_amount": 4,
+			"spawns": -1,
+			"particle_settings": {
+				"lifetime": 50,
+				"x_speed": 0,
+				"y_speed": -0.5,
+				"y_acceleration": -0.02,
+				"scale": 0.4,
+				"scale_end": 0,
+				"shape": "circle",
+				"colourise": true,
+				"colour": [255, 0, 0],
+				"colour_end": [255, 255, 0]
+			},
+			"particle_variation": {
+				"lifetime": 10,
+				"x_speed": 0.3,
+				"x_acceleration": 0.05,
+				"y_speed": 0.4,
+				"scale": 0.2
+			}
+		}
+	]
+}

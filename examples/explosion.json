@@ -1,0 +1,60 @@
+{
+	"loops": 1,
+	"emitters": [
+		{
+			"x": 4,
+			"y": 4,
+			"width": 8,
+			"height": 8,
+			"frames": 20,
+			"spawn_amount": 5,
+			"spawns": 3,
+			"particle_settings": {
+				"lifetime": 60,
+				"x_speed": 0,
+				"y_speed": 0,
+				"scale": 0.5,
+				"scale_end": 0,
+				"shape": "circle",
+				"colourise": true,
+				"colour": [255, 0, 0],
+				"colour_end": [255, 255, 0]
+			},
+			"particle_variation": {
+				"lifetime": 10,
+				"x_speed": 0.8,
+				"y_speed": 0.8,
+				"scale": 0.2
+			}
+		},
+		{
+			"width": 16,
+			"height": 16,
+			"frames": 20,
+			"spawn_amount": 20,
+			"spawns": 3,
+			"particle_settings": {
+				"lifetime": 30,
+				"x_speed": 0,
+				"y_speed": -1,
+				"x_acceleration": 0,
+				"y_acceleration": 0.1,
+				"scale": 0.5,
+				"scale_end": 0.5,
+				"shape": "circle",
+				"colourise": true,
+				"colour": [255, 255, 255],
+				"colour_end": [0, 0, 0]
+			},
+			"particle_variation": {
+				"lifetime": 5,
+				"x_speed": 1,
+				"y_speed": 1,
+				"x_acceleration": 0.05,
+				"y_acceleration": 0.05,
+				"scale": 0.5,
+				"scale_end":0.5
+			}
+		}
+	]
+}

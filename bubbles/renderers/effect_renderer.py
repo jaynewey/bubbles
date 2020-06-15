@@ -22,8 +22,8 @@ class EffectRenderer(ABC):
         """
         for emitter in particle_effect.get_emitters():
             for particle in emitter.particles:
-                position = (particle_effect.x + particle.x - particle.scale / 2,
-                            particle_effect.y + particle.y - particle.scale / 2)
+                position = (particle_effect.x + particle.x - (self.base_size * particle.scale) / 2,
+                            particle_effect.y + particle.y - (self.base_size * particle.scale) / 2)
                 self._render_particle(particle, surface, position)
 
     @abstractmethod

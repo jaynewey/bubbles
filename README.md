@@ -6,9 +6,9 @@ A lightweight, flexible particle system written in Python.
 
 Here are some examples of simple particle effects with bubbles.
 
-![Alt Text](https://media.giphy.com/media/H5wjqqavoLRy5JiEXh/giphy.gif)
-![Alt Text](https://media.giphy.com/media/fxYWAMX1UC9RSmxdeO/giphy.gif)
-![Alt Text](https://media.giphy.com/media/L0evOjJujJuDLSzuTa/giphy.gif)
+![Alt Text](https://media.giphy.com/media/YRz5GtvCT2iyi6UNbk/giphy.gif)
+![Alt Text](https://media.giphy.com/media/ieJ24tUSc08s76xqrk/giphy.gif)
+![Alt Text](https://media.giphy.com/media/d7qlgC0QFOJKwZUsem/giphy.gif)
 
 You can find the .json for these in the examples folder.
 

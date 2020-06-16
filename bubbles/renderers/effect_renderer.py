@@ -68,7 +68,11 @@ class EffectRenderer(ABC):
         for emitter in particle_effect.get_emitters():
             if "shape" in emitter.particle_settings.keys():
                 if not emitter.particle_settings["shape"] in self._shapes.keys():
-                    relative_path = absolute_path = emitter.particle_settings["shape"]
+                    if emitter.particle_settings["shape"] in Particle.sample_texture_map.keys():
+                        relative_path = emitter.particle_settings["shape"]
+                        absolute_path = Particle.sample_texture_map[emitter.particle_settings["shape"]]
+                    else:
+                        relative_path = absolute_path = emitter.particle_settings["shape"]
                     if absolute_path not in self._textures.keys():
                         self._textures[relative_path] = self._load_texture(absolute_path)
 

@@ -179,3 +179,10 @@ The `base_size` constructor parameter is used for vector shape drawing. It deter
 If you want to use partial transparency with a texture you can do so by passing the optional parameter `per_pixel_alpha=True` in the constructor and using a pygame surface with the `pygame.SRCALPHA` flag. Note that this will make rendering somewhat slower though.
 
 Something to note is any black (RGB=(0, 0, 0)) particles are transparent by default. If you want to use a texture that has black in it, change the colorkey using the optional parameter `colorkey` when constructing a `PygameEffectRenderer`. The built-in shapes and textures rely on the colorkey being black so only do this per your specific requirements.
+
+#### ImageEffectRenderer
+
+`ImageEffectRenderer` renders a particle effect onto a `PIL` (Python Imaging Library) `Image` object passed into `render_effect`.
+Therefore, it requires `PIL`/`Pillow` to work. `Pillow` is a `PIL` fork that is regularly maintained and updated.
+
+`PygameEffectRenderer` and `ImageEffectRenderer` currently support `"square"` and `"circle"` as vector shape parameters.

@@ -162,9 +162,9 @@ This effect does nothing since there are no emitters and hence no particles to d
 
 ### EffectRenderer
 
-You need to actually render your effects to see them of course. Use an `EffectRenderer` for this. It is an abstract class you can inherit from to draw your effects onto any kind of surface. One builtin renderers comes with bubbles at present, and works with pygame surfaces, called `PygameEffectRenderer`.
+You need to actually render your effects to see them of course. Use an `EffectRenderer` for this. It is an abstract class you can inherit from to draw your effects onto any kind of surface. Two builtin renderers come with bubbles at present, `PygameEffectRenderer` and `ImageEffectRenderer`.
 
-You can use `render_effect(particle_effect, surface)` to render an entire particle effect onto a given surface.
+You can use `render_effect(particle_effect, surface)` to render an entire particle effect onto a given surface. The type of surface is renderer dependent.
 
 However you might want to write your own for a specific purpose. In this case make a class and inherit from `EffectRenderer`, then implement all required methods in your renderer. There is annotation in `effect_renderer.py` to help with this.
 

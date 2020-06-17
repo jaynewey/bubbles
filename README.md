@@ -160,6 +160,12 @@ Particle effects handle Emitters and Particles. You can specify an effect's emit
 
 This effect does nothing since there are no emitters and hence no particles to draw. The `emitters` array is here is a an array of emitter settings dictionaries.
 
+To update a particle effect instance by one frame, call its `update()` method. You can optionally pass it the deltatime parameter for framerate independence:
+
+`particle_effect.update(deltatime=dt)`
+
+Where delta time is your target fps / actual fps.
+
 ### EffectRenderer
 
 You need to actually render your effects to see them of course. Use an `EffectRenderer` for this. It is an abstract class you can inherit from to draw your effects onto any kind of surface. Two builtin renderers come with bubbles at present, `PygameEffectRenderer` and `ImageEffectRenderer`.

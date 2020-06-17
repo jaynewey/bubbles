@@ -13,9 +13,11 @@ class ParticleEffect:
         self.loops = -1
         self._current_loop = 1
 
-    def update(self):
+    def update(self, deltatime=1):
         """Performs a frame of updates to the effect, updating emitters and their particles.
 
+        :param deltatime: Target fps / actual fps. To ensure that particles are framerate independent
+        :type deltatime: float
         :return: None
         """
         for emitter in self._emitters:
@@ -25,7 +27,7 @@ class ParticleEffect:
 
             dead_particles = set()
             for particle in emitter.particles:
-                particle.update()
+                particle.update(deltatime)
                 if particle.is_dead():
                     dead_particles.add(particle)
 

@@ -34,7 +34,7 @@ class Particle:
         self._rotation_change = 0
         self._colour_change = [0, 0, 0]
 
-    def update(self):
+    def update(self, deltatime):
         """Performs a single frame of updates to the particle.
 
         :return: None
@@ -42,8 +42,8 @@ class Particle:
         self._current_frame += 1
         self.x_speed += self.x_acceleration
         self.y_speed += self.y_acceleration
-        self.x += self.x_speed
-        self.y += self.y_speed
+        self.x += self.x_speed * deltatime
+        self.y += self.y_speed * deltatime
         self.scale += self._scale_change
         self.opacity += self._opacity_change
         self.rotation += self._rotation_change

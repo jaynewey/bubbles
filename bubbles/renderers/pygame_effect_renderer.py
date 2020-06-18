@@ -1,6 +1,6 @@
 import pygame
 
-from bubbles.renderers.effect_renderer import EffectRenderer
+from .effect_renderer import EffectRenderer
 
 
 class PygameEffectRenderer(EffectRenderer):

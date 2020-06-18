@@ -1,4 +1,4 @@
-from bubbles.emitter import Emitter
+from .emitter import Emitter
 
 
 class ParticleEffect:
@@ -55,7 +55,6 @@ class ParticleEffect:
             self._emitters.add(emitter)
         return self
 
-    @property
     def get_emitters(self):
         """Gets the emitters that belong to this effect.
 

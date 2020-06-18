@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from bubbles.particle import Particle
+from ..particle import Particle
 
 
 class EffectRenderer(ABC):

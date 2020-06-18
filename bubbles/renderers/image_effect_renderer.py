@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw, ImageChops
 
-from bubbles.renderers.effect_renderer import EffectRenderer
+from .effect_renderer import EffectRenderer
 
 
 class ImageEffectRenderer(EffectRenderer):

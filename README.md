@@ -147,8 +147,12 @@ Particle effects handle Emitters and Particles. You can specify an effect's emit
 ```python
 {
     # Position of the entire effect relative to where it is drawn
-    "x":0,
-    "y":0,
+    "x": 0,
+    "y": 0,
+
+    # Global speed of the effect, applies to particles and position of effect
+    "x_speed": 0,
+    "y_speed": 0,
     
     # How many loops of the effect until this effect is finished, by default is infinite
     "loops": -1,

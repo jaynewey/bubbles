@@ -8,7 +8,9 @@ class ParticleEffect:
         self._dead_emitters = set()
 
         self.x = 0
+        self.x_speed = 0
         self.y = 0
+        self.y_speed = 0
 
         self.loops = -1
         self._current_loop = 1
@@ -20,6 +22,9 @@ class ParticleEffect:
         :type deltatime: float
         :return: None
         """
+        self.x += self.x_speed * deltatime
+        self.y += self.y_speed * deltatime
+
         for emitter in self._emitters:
             emitter.update()
             if emitter.is_dead():
@@ -28,6 +33,8 @@ class ParticleEffect:
             dead_particles = set()
             for particle in emitter.particles:
                 particle.update(deltatime)
+                particle.x -= self.x_speed * deltatime
+                particle.y -= self.y_speed * deltatime
                 if particle.is_dead():
                     dead_particles.add(particle)
 

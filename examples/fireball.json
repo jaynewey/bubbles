@@ -12,19 +12,19 @@
 				"x_speed": 0,
 				"y_speed": -0.5,
 				"y_acceleration": -0.02,
-				"scale": 0.4,
-				"scale_end": 0,
+				"scale": [0.4, 0],
 				"shape": "circle",
 				"colourise": true,
-				"colour": [255, 0, 0],
-				"colour_end": [255, 255, 0]
+				"red": [255, 255],
+				"green": [0, 255],
+				"blue": [0, 0]
 			},
 			"particle_variation": {
 				"lifetime": 10,
 				"x_speed": 0.3,
 				"x_acceleration": 0.05,
 				"y_speed": 0.4,
-				"scale": 0.2
+				"scale": [0.2, 0]
 			}
 		}
 	]

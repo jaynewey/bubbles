@@ -13,13 +13,13 @@
 				"y_speed": 0,
 				"x_acceleration": 0,
 				"y_acceleration": 0,
-				"scale": 0.5,
-				"scale_end": 0.8,
-				"opacity_end": 0,
+				"scale": [0.5, 0.8],
+				"opacity": [1, 0],
 				"shape": "circle",
 				"colourise": true,
-				"colour": [65, 179, 163],
-				"colour_end": [133, 220, 176]
+				"red": [65, 133],
+				"green": [179, 220],
+				"blue": [163, 176]
 			},
 			"particle_variation": {
 				"lifetime": 10,

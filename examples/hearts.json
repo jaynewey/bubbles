@@ -13,15 +13,14 @@
 				"y_speed": -1,
 				"x_acceleration": 0,
 				"y_acceleration": -0.05,
-				"scale": 0.8,
-				"scale_end": 1.2,
-				"rotation": 0,
-				"rotation_end": 0,
-				"opacity_end": 0,
+				"scale": [0.8, 1.2],
+				"rotation": [0, 0],
+				"opacity": [1, 0],
 				"shape": "heart16x16.png",
 				"colourise": true,
-				"colour": [255, 49, 99],
-				"colour_end": [252, 100, 123]
+				"red": [255, 252],
+				"green": [49, 100],
+				"blue": [99, 123]
 				
 			},
 			"particle_variation": {
@@ -30,8 +29,7 @@
 				"y_speed": 0.5,
 				"x_acceleration": 0.05,
 				"y_acceleration": 0.05,
-				"rotation": 15,
-				"rotation_end": 15
+				"rotation": [15, 15]
 			}
 		}
 	]

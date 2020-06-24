@@ -80,19 +80,6 @@ class Particle:
         """
         return self._current_frame > self.lifetime
 
-    def _calculate_changes(self):
-        """Calculates and sets the gradient of several parameters for use in the update function
-
-        :return: None
-        """
-        self._scale_change = (self.scale_end - self.scale) / self.lifetime
-        self._opacity_change = (self.opacity_end - self.opacity) / self.lifetime
-        self._rotation_change = (self.rotation_end - self.rotation) / self.lifetime
-        initial_colour = self.colour
-        self.colour = [i for i in initial_colour]
-        self._colour_change = [(self.colour_end[i] - initial_colour[i]) / self.lifetime
-                               for i in range(len(initial_colour))]
-
     def _interpolate(self, points):
         if points is None:
             return 0

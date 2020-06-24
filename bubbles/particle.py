@@ -18,27 +18,32 @@ class Particle:
         # Settable values
         self.lifetime = 30
         self.interpolation = "linear"
+
         self.x = 0
         self.x_speed = 0
         self.x_acceleration = 0
         self.y = 0
         self.y_speed = 0
         self.y_acceleration = 0
+
         self.scale = 1
-        self.scale_points = [0, 1, 0]
+        self._scale_points = None
+
         self.opacity = 1
-        self.opacity_points = [0, 1, 0]
+        self._opacity_points = None
+
         self.rotation = 0
-        self.rotation_points = [0, 0]
+        self._rotation_points = None
+
         self.shape = "circle"
         self.colourise = False
-        self.colour = [255, 255, 255]
-        self.colour_points = [[255, 255], [255, 255], [255, 255]]
 
-        self._scale_change = 0
-        self._opacity_change = 0
-        self._rotation_change = 0
-        self._colour_change = [0, 0, 0]
+        self.red = 255
+        self._red_points = None
+        self.green = 255
+        self._green_points = None
+        self.blue = 255
+        self._blue_points = None
 
     def update(self, deltatime):
         """Performs a single frame of updates to the particle.
@@ -49,11 +54,12 @@ class Particle:
         self.y_speed += self.y_acceleration
         self.x += self.x_speed * deltatime
         self.y += self.y_speed * deltatime
-        self.scale += self._interpolate(self.scale_points)
-        self.opacity += self._interpolate(self.opacity_points)
-        self.rotation += self._interpolate(self.rotation_points)
-        for i in range(len(self.colour)):
-            self.colour[i] += self._interpolate(self.colour_points[i])
+        self.scale += self._interpolate(self._scale_points)
+        self.opacity += self._interpolate(self._opacity_points)
+        self.rotation += self._interpolate(self._rotation_points)
+        self.red += self._interpolate(self._red_points)
+        self.green += self._interpolate(self._green_points)
+        self.blue += self._interpolate(self._blue_points)
         self._current_frame += 1
 
     def is_dead(self):
@@ -77,13 +83,9 @@ class Particle:
         self._colour_change = [(self.colour_end[i] - initial_colour[i]) / self.lifetime
                                for i in range(len(initial_colour))]
 
-    def _initialise_points(self):
-        self.scale = self.scale_points[0]
-        self.opacity = self.opacity_points[0]
-        self.rotation = self.rotation_points[0]
-        self.colour = [c[0] for c in self.colour_points]
-
     def _interpolate(self, points):
+        if points is None:
+            return 0
         frames_per_point = self.lifetime // (len(points) - 1)
         current_point = int(self._current_frame / frames_per_point)
         y1 = points[current_point]
@@ -106,6 +108,13 @@ class Particle:
         particle = Particle()
         for setting in settings.keys():
             if setting in particle.__dict__.keys():
-                particle.__dict__[setting] = settings[setting]
-        particle._initialise_points()
+                if type(settings[setting]) is list and len(settings[setting]) > 1:
+                    particle.__dict__[setting] = settings[setting][0]
+                    particle.__dict__["_" + setting + "_points"] = settings[setting]
+                else:
+                    particle.__dict__[setting] = settings[setting]
         return particle
+
+    @property
+    def colour(self):
+        return self.red, self.green, self.blue

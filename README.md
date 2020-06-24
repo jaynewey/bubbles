@@ -42,7 +42,7 @@ Particles are the small, individual parts that make up a collective effect. `Emi
     # How many frames the particle lives for
     "lifetime": 30,
     
-    # The x posiiton of the particle relative to the effect
+    # The x position of the particle relative to the effect
     "x": 0,
     "x_speed": 0,
     "x_acceleration": 0,
@@ -54,38 +54,67 @@ Particles are the small, individual parts that make up a collective effect. `Emi
     
     # A multiplier of the size of the particle's shape. Generally <= 1, >= 0
     "scale": 1,
-    "scale_end": 1,
     
     # How opaque the particle is
     "opacity": 1,
-    "opacity_end": 1,
     
     # Rotation of the particle in degrees
     "rotation": 0,
-    "rotation_end": 0,
     
     # The shape of the particle (renderer dependant). Can be a texture
     "shape": "square",  # The name of the shape (renderer dependent) or the path to your texture.
         
     # The RGB colour overlay of the particle
     "colourise": False,  # If the particle is a texture, whether the particle should be coloured or not
-    "colour": [255, 255, 255],   
-    "colour_end": [255, 255, 255]
+    "red": 255,
+    "green": 255,
+    "blue": 255
 }
 ```
 
-Any parameters that have the suffix `_end` are, well, the end values of the parameter. For example if we have:
+Often, you might want parameters to change over the lifetime of a Particle. You can do this by setting the parameter as a list. For example:
 
 ```python
 {
-    "scale": 0,
-    "scale_end": 1
+    "scale": [0, 1],
 }
 ```
 
 The particle will start its life will a scale of 0, and linearly grow to a scale of 1 by the end of its lifetime.
 
+You can now do more than this, and change parameters any number of times over the lifetime of a particle:
+
+```python
+{
+    "scale": [0, 1, 0]
+}
+```
+
+The particle will go from 0, to 1, to 0 in scale over its lifetime. You can apply this technique to the following parameters:
+
+```python
+[
+    "x_speed",
+    "x_acceleration",
+    
+    "y_speed",
+    "y_acceleration",
+
+    "scale",
+
+    "opacity",
+
+    "rotation",
+
+    "red",
+    "green",
+    "blue"
+]
+```
+
 Presently, only linear transitions between start and end values are possible.
+
+Note, that if you use a list for a parameter, that you must similarly use a list of the same length if you want to specify variation for that parameter.
 
 bubbles supports drawing of vector shapes, or using a texture instead. The default shape is square. The drawing of these shapes is renderer dependent however. All renderers should really have a square drawer as it is the default for particles. Refer to the `ÈffectRenderer` section to see renderers and whats shapes they can draw.
 
@@ -127,11 +156,11 @@ You would want some form of variation between these particles, and to actually s
             "x_acceleration": 0,
             "y_acceleration": 0,
             "scale": 0,
-            "scale_end": 0,
             "opacity": 0,
-            "opacity_end": 0,
-            "rotation": 0,
-            "rotation_end": 0,
+            "rotation": 0
+            "red": 0,
+            "green": 0,
+            "blue": 0
         }
 }
 ```

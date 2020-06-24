@@ -21,10 +21,15 @@ class Particle:
 
         self.x = 0
         self.x_speed = 0
+        self._x_speed_points = None
         self.x_acceleration = 0
+        self._x_acceleration_points = None
+
         self.y = 0
         self.y_speed = 0
+        self._y_speed_points = None
         self.y_acceleration = 0
+        self._y_acceleration_points = None
 
         self.scale = 1
         self._scale_points = None
@@ -35,7 +40,7 @@ class Particle:
         self.rotation = 0
         self._rotation_points = None
 
-        self.shape = "circle"
+        self.shape = "square"
         self.colourise = False
 
         self.red = 255
@@ -50,16 +55,21 @@ class Particle:
 
         :return: None
         """
-        self.x_speed += self.x_acceleration
-        self.y_speed += self.y_acceleration
+        self.x_acceleration += self._interpolate(self._x_acceleration_points)
+        self.y_acceleration += self._interpolate(self._y_acceleration_points)
+        self.x_speed += self._interpolate(self._x_speed_points) + self.x_acceleration
+        self.y_speed += self._interpolate(self._y_speed_points) + self.y_acceleration
         self.x += self.x_speed * deltatime
         self.y += self.y_speed * deltatime
+
         self.scale += self._interpolate(self._scale_points)
         self.opacity += self._interpolate(self._opacity_points)
         self.rotation += self._interpolate(self._rotation_points)
+
         self.red += self._interpolate(self._red_points)
         self.green += self._interpolate(self._green_points)
         self.blue += self._interpolate(self._blue_points)
+        
         self._current_frame += 1
 
     def is_dead(self):

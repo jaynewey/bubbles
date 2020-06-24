@@ -41,14 +41,14 @@ class ImageEffectRenderer(EffectRenderer):
     def _render_circle(self, particle):
         texture, size = self._get_shape_surface(particle)
         draw = ImageDraw.Draw(texture, "RGBA")
-        fill = tuple(round(i) for i in particle.colour+[particle.opacity * 255])
+        fill = tuple(round(i) for i in list(particle.colour)+[particle.opacity * 255])
         draw.ellipse([(0, 0), (size, size)], fill=fill)
         return texture
 
     def _render_square(self, particle):
         texture, size = self._get_shape_surface(particle)
         draw = ImageDraw.Draw(texture, "RGBA")
-        fill = tuple(round(i) for i in particle.colour + [particle.opacity * 255])
+        fill = tuple(round(i) for i in list(particle.colour) + [particle.opacity * 255])
         draw.rectangle([(0, 0), (size, size)], fill=fill)
         texture = texture.rotate(particle.rotation, expand=True)
         return texture

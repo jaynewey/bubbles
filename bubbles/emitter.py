@@ -16,11 +16,11 @@ class Emitter:
             "x_acceleration": 0,
             "y_acceleration": 0,
             "scale": 0,
-            "scale_end": 0,
             "opacity": 0,
-            "opacity_end": 0,
             "rotation": 0,
-            "rotation_end": 0,
+            "red": 0,
+            "green": 0,
+            "blue": 0
         }
 
         self.particles = set()

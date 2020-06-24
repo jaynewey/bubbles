@@ -69,7 +69,7 @@ class Particle:
         self.red += self._interpolate(self._red_points)
         self.green += self._interpolate(self._green_points)
         self.blue += self._interpolate(self._blue_points)
-        
+
         self._current_frame += 1
 
     def is_dead(self):

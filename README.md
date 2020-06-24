@@ -10,6 +10,7 @@ Here are some examples of simple particle effects with bubbles.
 ![Alt Text](https://media.giphy.com/media/ieJ24tUSc08s76xqrk/giphy.gif)
 ![Alt Text](https://media.giphy.com/media/d7qlgC0QFOJKwZUsem/giphy.gif)
 ![Alt Text](https://media.giphy.com/media/YoiFhr35wKXuRFteUx/giphy.gif)
+![Alt Text](https://media.giphy.com/media/VbiApDYPwifGhAW9M9/giphy.gif)
 
 You can find the .json for these in the examples folder.
 

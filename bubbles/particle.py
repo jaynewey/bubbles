@@ -1,3 +1,4 @@
+import math
 from pathlib import Path
 
 
@@ -11,6 +12,7 @@ class Particle:
         # Interpolation methods
         self.interpolation_methods = {
             "linear": self._linear_interpolate,
+            "cosine": self._cosine_interpolate
         }
 
         self._current_frame = 0
@@ -87,11 +89,16 @@ class Particle:
         current_point = int(self._current_frame / frames_per_point)
         y1 = points[current_point]
         y2 = points[current_point + 1] if current_point + 1 < len(points) else points[current_point]
-        return self.interpolation_methods[self.interpolation](y1, y2, frames_per_point)
+        x1 = current_point * frames_per_point
+        x2 = (current_point + 1) * frames_per_point
+        return self.interpolation_methods[self.interpolation](y1, y2, x1, x2)
 
     @staticmethod
-    def _linear_interpolate(y1, y2, frames):
-        return (y2 - y1) / frames
+    def _linear_interpolate(y1, y2, x1, x2):
+        return (y2 - y1) / (x2 - x1)
+
+    def _cosine_interpolate(self, y1, y2, x1, x2):
+        return ((y2 - y1) / (x2 - x1)) * (math.pi / 2) * math.sin((math.pi * (self._current_frame - x1)) / (x2 - x1))
 
     @staticmethod
     def load_from_dict(settings):

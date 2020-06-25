@@ -1,0 +1,32 @@
+{
+	"loops": -1,
+	"emitters": [
+		{
+			"width": 8,
+			"height": 0,
+			"frames": 10,
+			"spawn_amount": 10,
+			"spawns": 10,
+			"particle_settings": {
+				"interpolation": "cosine",
+				"lifetime": 120,
+				"x_speed": [3, -4, 5, -6, 7, -8],
+				"y_speed": -0.2,
+				"y_acceleration": -0.02,
+				"scale": [0.2, 0.1, 0.3, 0.2, 0.4, 0.3],
+				"shape": "circle",
+				"colourise": true,
+				"opacity": [1, 0],
+				"red": 200,
+				"green": 200,
+				"blue": 200
+			},
+			"particle_variation": {
+				"lifetime": 30,
+				"x_speed": [0.2, 0.4, 0.6, 0.8, 1, 1.2],
+				"y_speed": 0.2,
+				"scale": [0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+			}
+		}
+	]
+}

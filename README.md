@@ -43,6 +43,9 @@ Particles are the small, individual parts that make up a collective effect. `Emi
     # How many frames the particle lives for
     "lifetime": 30,
     
+    # The interpolation function between points
+    "interpolation": "linear",    
+
     # The x position of the particle relative to the effect
     "x": 0,
     "x_speed": 0,
@@ -113,7 +116,7 @@ The particle will go from 0, to 1, to 0 in scale over its lifetime. You can appl
 ]
 ```
 
-Presently, only linear transitions between start and end values are possible.
+You can choose between `"linear"` and `"cosine"` interpolation between these points by changing the `"interpolation"` parameter.
 
 Note, that if you use a list for a parameter, that you must similarly use a list of the same length if you want to specify variation for that parameter.
 

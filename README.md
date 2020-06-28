@@ -6,12 +6,12 @@ A lightweight, flexible particle system written in Python.
 
 Here are some examples of simple particle effects with bubbles.
 
-![Alt Text](https://media.giphy.com/media/YRz5GtvCT2iyi6UNbk/giphy.gif)
-![Alt Text](https://media.giphy.com/media/ieJ24tUSc08s76xqrk/giphy.gif)
-![Alt Text](https://media.giphy.com/media/d7qlgC0QFOJKwZUsem/giphy.gif)
-![Alt Text](https://media.giphy.com/media/YoiFhr35wKXuRFteUx/giphy.gif)
-![Alt Text](https://media.giphy.com/media/VbiApDYPwifGhAW9M9/giphy.gif)
-![Alt Text](https://media.giphy.com/media/igt6cCxERpMfChrhjW/giphy.gif)
+![Bubbles](https://media.giphy.com/media/YRz5GtvCT2iyi6UNbk/giphy.gif)
+![Fireball](https://media.giphy.com/media/ieJ24tUSc08s76xqrk/giphy.gif)
+![Explosion](https://media.giphy.com/media/d7qlgC0QFOJKwZUsem/giphy.gif)
+![Hearts](https://media.giphy.com/media/YoiFhr35wKXuRFteUx/giphy.gif)
+![Confetti](https://media.giphy.com/media/VbiApDYPwifGhAW9M9/giphy.gif)
+![Tornado](https://media.giphy.com/media/igt6cCxERpMfChrhjW/giphy.gif)
 
 You can find the .json for these in the examples folder.
 

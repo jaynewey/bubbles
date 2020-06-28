@@ -119,6 +119,21 @@ The particle will go from 0, to 1, to 0 in scale over its lifetime. You can appl
 
 You can choose between `"linear"` and `"cosine"` interpolation between these points by changing the `"interpolation"` parameter.
 
+To illustrate the difference between these types of interpolation, consider the following particle example:
+
+```python
+{
+    "lifetime": 60,
+    "opacity": [0.25, 0.8, 0, 0.5, 0.1]
+}
+```
+
+The following graphs show how the values will change over the particle's lifetime:
+
+| <img src="https://i.imgur.com/v9lE9SY.png" width="100%"> | <img src="https://i.imgur.com/PiCloz6.png" width="100%"> | <img src="https://i.imgur.com/fUfXPfB.png" width="100%"> |
+|--------|--------|------|
+| Linear | Cosine | Both |
+
 Note, that if you use a list for a parameter, that you must similarly use a list of the same length if you want to specify variation for that parameter.
 
 bubbles supports drawing of vector shapes, or using a texture instead. The default shape is square. The drawing of these shapes is renderer dependent however. All renderers should really have a square drawer as it is the default for particles. Refer to the `ÈffectRenderer` section to see renderers and whats shapes they can draw.

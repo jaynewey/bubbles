@@ -76,9 +76,8 @@ class Emitter:
         for parameter, value in self.particle_settings.items():
             if parameter in self.particle_variation.keys():
                 if type(value) is list:
-                    values[parameter] = [uniform(value[i]-self.particle_variation[parameter][i],
-                                                 value[i]+self.particle_variation[parameter][i])
-                                         for i in range(len(value))]
+                    values[parameter] = [uniform(base - variation, base + variation)
+                                         for base, variation in zip(value, self.particle_variation[parameter])]
                 else:
                     values[parameter] = uniform(value-self.particle_variation[parameter],
                                                 value+self.particle_variation[parameter])

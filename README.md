@@ -1,5 +1,7 @@
 # bubbles
 
+![GitHub](https://img.shields.io/github/license/jaynewey/bubbles)
+
 A lightweight, flexible particle system written in Python.
 
 ## Examples

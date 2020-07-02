@@ -248,6 +248,9 @@ Something to note is any black (RGB=(0, 0, 0)) particles are transparent by defa
 `ImageEffectRenderer` renders a particle effect onto a `PIL` (Python Imaging Library) `Image` object passed into `render_effect`.
 Therefore, it requires `PIL`/`Pillow` to work. `Pillow` is a `PIL` fork that is regularly maintained and updated.
 
+
+#### Supported vector shapes, custom vector shapes
+
 `PygameEffectRenderer` and `ImageEffectRenderer` both currently support `"square"` and `"circle"` as vector shape parameters, but it is important to note that supported shapes are renderer dependent.
 
 For example, you may choose not to support any vector shape drawing in your own `EffectRenderer`, or support any number of shapes. You can do the latter by specifying the shape name, and its corresponding draw method in the `EffectRenderer._shapes` dictionary, in your renderer's constructor.

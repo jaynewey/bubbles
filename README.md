@@ -2,7 +2,7 @@
 
 ![GitHub](https://img.shields.io/github/license/jaynewey/bubbles)
 
-A lightweight, flexible particle system written in Python.
+> A lightweight, flexible particle system written in Python.
 
 ## Examples
 

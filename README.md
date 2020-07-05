@@ -4,6 +4,17 @@
 
 > A lightweight, flexible particle system written in Python.
 
+## Contents
+
+  * [Examples](#examples)
+  * [Usage](#usage)
+    + [Particle](#particle)
+    + [Emitter](#emitter)
+    + [ParticleEffect](#particleeffect)
+    + [EffectRenderer](#effectrenderer)
+      - [PygameEffectRenderer](#pygameeffectrenderer)
+      - [ImageEffectRenderer](#imageeffectrenderer)
+
 ## Examples
 
 Here are some examples of simple particle effects with bubbles.

@@ -22,7 +22,8 @@ class PygameEffectRenderer(EffectRenderer):
             texture.fill((255, 255, 255, round(255 * particle.opacity)), special_flags=pygame.BLEND_RGBA_MULT)
         else:
             texture.set_alpha(round(255 * particle.opacity))
-        texture = pygame.transform.rotate(texture, particle.rotation)
+        if particle.rotation != 0:
+            texture = pygame.transform.rotate(texture, particle.rotation)
         surface.blit(texture, (position[0], position[1]))
 
     def _render_texture(self, particle):

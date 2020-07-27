@@ -197,7 +197,7 @@ You would want some form of variation between these particles, and to actually s
 
 You want to tell the Emitter what kind of particles to spawn. You can set `particle_settings` as a dictionary with the particle attributes you want.
 
-Particle variation specifies how varied you'd like the particles to be on a +- basis. For example, setting the `lifetime` in settings to 60 and the `lifetime` variation to 30 means that the lifetime of particles spawned by the emitter is between 30 and 90. Note you cannot vary colour (yet, anyway).
+Particle variation specifies how varied you'd like the particles to be on a +- basis. For example, setting the `lifetime` in settings to 60 and the `lifetime` variation to 30 means that the lifetime of particles spawned by the emitter is between 30 and 90.
 
 ### ParticleEffect
 

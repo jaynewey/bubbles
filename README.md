@@ -249,12 +249,12 @@ If you want to use partial transparency with a texture you can do so by passing 
 
 Something to note is any black (RGB=(0, 0, 0)) particles are transparent by default. If you want to use a texture that has black in it, change the colorkey using the optional parameter `colorkey` when constructing a `PygameEffectRenderer`. The built-in shapes and textures rely on the colorkey being black so only do this per your specific requirements.
 
-`PygameEffectRenderer` requires the `pygame` module to be installed.
+`PygameEffectRenderer` requires the [pygame](www.pygame.org) module to be installed.
 
 #### ImageEffectRenderer
 
 `ImageEffectRenderer` renders a particle effect onto a `PIL` (Python Imaging Library) `Image` object passed into `render_effect`.
-Therefore, it requires `PIL`/`Pillow` to work. `Pillow` is a `PIL` fork that is regularly maintained and updated.
+Therefore, it requires `PIL`/`Pillow` to work. [Pillow](python-pillow.org) is a `PIL` fork that is regularly maintained and updated.
 
 
 #### Supported vector shapes, custom vector shapes

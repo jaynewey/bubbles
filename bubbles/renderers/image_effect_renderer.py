@@ -5,8 +5,8 @@ from .effect_renderer import EffectRenderer
 
 class ImageEffectRenderer(EffectRenderer):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         self._shapes = {
             "circle": self._render_circle,
             "square": self._render_square

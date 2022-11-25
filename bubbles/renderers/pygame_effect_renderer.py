@@ -4,8 +4,8 @@ from .effect_renderer import EffectRenderer
 
 
 class PygameEffectRenderer(EffectRenderer):
-    def __init__(self, per_pixel_alpha=False, colorkey=(0, 0, 0)):
-        super().__init__()
+    def __init__(self, per_pixel_alpha=False, colorkey=(0, 0, 0), **kwargs):
+        super().__init__(**kwargs)
         self._per_pixel_alpha = per_pixel_alpha
         self._colorkey = colorkey
         self._shapes = {

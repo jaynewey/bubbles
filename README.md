@@ -8,6 +8,7 @@
 
   * [Examples](#examples)
   * [Usage](#usage)
+    + [Minimal working example](#minimal-working-example)
     + [Particle](#particle)
     + [Emitter](#emitter)
     + [ParticleEffect](#particleeffect)
@@ -44,6 +45,50 @@ particle_effect = ParticleEffect.load_from_dict(d)
 You can then render a `ParticleEffect` using your own or one of the builtin `EffectRenderer` classes.
 
 It is useful to note that when using `load_from_dict()` any parameters not specified in your dictionary will be remain as their default, meaning you need only specify parameters you want to change.
+
+### Minimal working example
+
+This will create a directory at `./out/<effect>/` with all of the frames of the particle effect that can be used to compile into a gif or video using something like [`imageio`](https://github.com/imageio/imageio).
+
+```sh
+pip install pillow
+```
+
+```python
+from PIL import Image, ImageDraw
+from pathlib import Path
+
+from bubbles.emitter import Emitter
+from bubbles.particle import Particle
+from bubbles.particle_effect import ParticleEffect
+from bubbles.renderers.image_effect_renderer import ImageEffectRenderer
+
+EXAMPLE_FILE = "tornado"
+EXAMPLE_DIR = "examples"
+IMG_DIR = f"out/{EXAMPLE_FILE}"
+
+r = ImageEffectRenderer()
+
+# load example json
+with open(f"{EXAMPLE_DIR}/{EXAMPLE_FILE}.json") as f:
+    import json
+    pe = json.load(f)
+particle_effect = ParticleEffect.load_from_dict(pe)
+
+# align the effect in the frame
+particle_effect.set_pos(60, 128)
+
+r.register_effect(particle_effect)
+
+Path(IMG_DIR).mkdir(parents=True, exist_ok=True)
+for i in range(240):
+    particle_effect.update()
+    if i > 0:
+        image = Image.new("RGB", (128, 128), (0, 0, 0, 255))
+        r.render_effect(particle_effect,  image)
+
+        image.save(f"{IMG_DIR}/{str(i)}.png")
+```
 
 ### Particle
 
